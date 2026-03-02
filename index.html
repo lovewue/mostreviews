@@ -6,22 +6,17 @@
   <meta name="robots" content="noindex" />
 </head>
 <body>
-  <p>Redirecting…</p>
   <script>
     (function () {
       const targetOrigin = "https://trendlist.co.uk";
 
-      // current path like "/index.html" or "/foo/bar"
       let path = window.location.pathname || "/";
+      path = path.replace(/\/index\.html$/i, "/");   // strip index.html
+      path = path.replace(/\/{2,}/g, "/");          // kill double slashes
 
-      // strip trailing "index.html"
-      path = path.replace(/\/index\.html$/i, "/");
-
-      // avoid accidental double slashes
-      path = path.replace(/\/{2,}/g, "/");
-
-      const url = targetOrigin + path + window.location.search + window.location.hash;
-      window.location.replace(url);
+      window.location.replace(
+        targetOrigin + path + window.location.search + window.location.hash
+      );
     })();
   </script>
 </body>
