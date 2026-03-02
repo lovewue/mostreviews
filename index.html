@@ -1,23 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>Redirecting…</title>
-  <meta name="robots" content="noindex" />
-</head>
-<body>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <meta name="robots" content="noindex">
   <script>
-    (function () {
-      const targetOrigin = "https://trendlist.co.uk";
-
-      let path = window.location.pathname || "/";
-      path = path.replace(/\/index\.html$/i, "/");   // strip index.html
-      path = path.replace(/\/{2,}/g, "/");          // kill double slashes
-
-      window.location.replace(
-        targetOrigin + path + window.location.search + window.location.hash
-      );
-    })();
+    window.location.replace("https://trendlist.co.uk/");
   </script>
-</body>
+</head>
+<body></body>
 </html>
